@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Radio;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,5 +20,12 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('radios/{radio}', function (Radio $radio){
+    return view('radio', [
+        'radio' => $radio
+    ]);
+});
+
 
 require __DIR__.'/auth.php';
