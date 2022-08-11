@@ -15,8 +15,6 @@ class CreateRadiosTable extends Migration
     {
         Schema::create('radios', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('idType');
             $table->timestamps();
         });
     }
